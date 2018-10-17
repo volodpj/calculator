@@ -1,19 +1,28 @@
-var value_1, value_2, result;
-function operation(x){
-    value_1 = x;
+// MAIN VARIABLE
+var value_1, value_2, result; 
+
+// MAIM FUNCTION
+function getID(ID){
+    let element = document.getElementById(ID);
+    return element;
+}
+function writeValue1(){
+    value_1 = +getID("display").value;
+    getID("display").value = "";
+}
+function writeValue2(){
+    value_2 = +getID("display").value;
+    getID("display").value = "";
 }
 
-var a = document.getElementById("val1");
-console.log(a);
+getID("plus").addEventListener("click", writeValue1);
 
-document.getElementById("plus").onclick = function(){
-    value_1 = +document.getElementById("display").value;
-    console.log(value_1);
-    document.getElementById("display").value = "";
-}
+
+
 
 document.getElementById("eqals").onclick = () => {
-    value_2 = +document.getElementById("display").value;
+    writeValue2("display");
     result = value_1 + value_2;
     console.log(result);
 }
+console.log(getID("plus"));
